@@ -1,24 +1,21 @@
 <html>
-	<head>
-        <% include ./partials/head %>
-	</head>
-	<body>
-		<header>
-			<a href="/"><img src="/images/favicon.png" class="favicon"></a>
-			<div>
-				<a href="/signup">Sign up</a>
-			</div>
-		</header>
-		<section>
-			<div class="container">
-				<div class="box-1">
-					Loja de representantes J.A Rio Militar
-				</div>
+    <head>
+        <% include ./../partials/head %>
+    </head>
+    <body>
+        <header>
+            <a href="/"><img src="/images/favicon.png" class="favicon"></a>
+            <div>
+                <a href="/signup">Sign up</a>
+            </div>
+        </header>
+        <section>
+            <div class="container">
                 <div class="box-1">
-                	<% if (message.length > 0) { %>
+                    <% if (message.length > 0) { %>
                         <div class="alert-msg"><%= message %></div>
                     <% } %>
-                    <form action="/user/login" method="post">
+                    <form action="/customer/login" method="post">
                         <div class="menu-box">
                             <h1 class="title-soft">Faça seu login</h1>
                             <span class="underline-title"></span>
@@ -30,11 +27,11 @@
                         </div>
                     </form>
                 </div>
-			</div>
-		</section>
-	</body>
-	<footer>
-        <% include ./partials/footer %>
+            </div>
+        </section>
+    </body>
+    <footer>
+        <% include ./../partials/footer %>
         </script>
-	</footer>
+    </footer>
 </html>

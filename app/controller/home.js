@@ -9,16 +9,22 @@ const homeController = {
 		res.render('index', { message: req.flash('loginMessage')});
 	},
 	admin: async (req, res) => {
-		if(!await userController.verifyAccess(req, res, ['Admin'])){
+		if(!await userController.verifyAccess(req, res, ['adm'])){
 			return res.redirect('/');
 		};
 		res.render('admin');
 	},
-	login: (req, res) => {
+	userLogin: (req, res) => {
 		if(req.user){
 			res.redirect("/");
 		};
-		res.render('login', { message: req.flash('loginMessage')});
+		res.render('customer/login', { message: req.flash('loginMessage')});
+	},
+	customerLogin: (req, res) => {
+		if(req.user){
+			res.redirect("/");
+		};
+		res.render('user/login', { message: req.flash('loginMessage')});
 	},
 	signup: (req, res) => {
 		if(req.user){

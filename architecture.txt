@@ -4,7 +4,6 @@ The sql files will be on /config
 DATABASE
 	hl_company_db
 
-	- Users tables
 		users
 			id
 			name
@@ -14,7 +13,6 @@ DATABASE
 
 ----------------------------------
 
-	- Products tables
 		products
 			id
 			code
@@ -28,7 +26,6 @@ DATABASE
 
 ----------------------------------
 
-	- Customers tables
 		customers
 			id
 			name

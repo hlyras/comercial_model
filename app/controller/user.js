@@ -1,5 +1,3 @@
-const passport = require('../../config/passport');
-
 const userController = {
 	index: (req, res) => {
 		res.render('user/profile', { user: req.user });
