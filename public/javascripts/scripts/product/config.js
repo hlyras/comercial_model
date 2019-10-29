@@ -1,6 +1,6 @@
 function productColorList(form, location){
 	$.ajax({
-		url: 'http://localhost:3000/colorList',
+		url: '/product/colorList',
 		method: 'get',
 		success: (response) => {
 			var html = "";

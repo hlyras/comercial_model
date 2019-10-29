@@ -11,5 +11,6 @@ router.get("/signup", homeController.signup);
 router.get("/logout", homeController.logout);
 
 router.use("/user", require("./user"));
+router.use("/product", require("./product"));
 
 module.exports = router;

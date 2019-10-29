@@ -11,13 +11,56 @@
 			</div>
 		</header>
 		<section>
-			<div class="container">
-				<div class="box-1">
-					<h6>Home</h6>
-					<h3>Basic Monolitic Framework Model</h3>
+            <div class="container">
+                <div class="box-2">
+                    <div class="menu-box">
+                    	<strong class="underline-title">Acesso rápido</strong>
+                        <strong class="span-menu underline-title" onclick="window.location.href='/sale'">Novo Pedido</strong>
+                        <strong class="span-menu underline-title" onclick="window.location.href='/customer'">Novo Cliente</strong>
+                    </div>
+                </div>
+                <div class="box-2">
+                    <div class="menu-box">
+                    	<strong class="underline-title">Menu</strong>
+                        <strong class="span-menu underline-title" onclick="window.location.href='/sale'">Vendas</strong>
+                        <strong class="span-menu underline-title" onclick="window.location.href='/customer'">Clientes</strong>
+                    </div>
+                </div>
+                <div class="box-1">
+					<button class="btn-generic-big" onclick="displayProductFilterForm('product-filter-form', 'product-div')">CATÁLOGO</button>
+					<form id="product-filter-form" class="box-1" style="display:none">
+						<input type="text" name="name" class="btn-generic-small" placeholder="Nome" autocomplete="off">
+						<input type="text" name="code" class="btn-generic-small" placeholder="Cód" autocomplete="off">
+						<select name="color" id="product-color" class="btn-generic-small" autocomplete="off">
+							<option value="">Cor</option>
+						</select>
+						<input type="submit" class="btn-generic-small" value="Filtrar">
+					</form>
+					<div id="product-div" style="display:none">
+						<table class="tbl-info" id="product-tbl"></table>
+						<button id="productPrevious" autocomplete="off" disabled>&lsaquo;&lsaquo;</button>
+	                    <span id="productPageNumber"></span>
+	                    <button id="productNext" autocomplete="off" disabled>&rsaquo;&rsaquo;</button>
+					</div>
 				</div>
-			</div>
-		</section>
+				
+				<div class="box-1" id="product-show-box" style="display:none;">
+					<table class="tbl-info" id="product-show-tbl">
+						<tr>
+							<td>Cód</td>
+							<td>Nome</td>
+							<td>Tamanho</td>
+							<td>Cor</td>
+						</tr>
+						<tbody id="product-show-tbody"></tbody>
+					</table>
+					<div class="box-1" id="product-image-show"></div>
+					<button id="imagePrevious" autocomplete="off" disabled>&lsaquo;&lsaquo;</button>
+                    <span id="imagePageNumber"></span>
+                    <button id="imageNext" autocomplete="off" disabled>&rsaquo;&rsaquo;</button>
+				</div>
+            </div>
+        </section>
 	</body>
 	<footer>
         <% include ./partials/footer %>

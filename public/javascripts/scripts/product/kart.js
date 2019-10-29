@@ -29,7 +29,7 @@ $(() => {
 		};
 
 		$.ajax({
-			url: "/get",
+			url: "/product/get",
 			method: 'post',
 			data: { 
 				product_code: code
@@ -99,7 +99,7 @@ $(() => {
 		let product_code = rowEl.find('#kart-product-code').text();
 
 		$.ajax({
-			url: "/get"+product_code,
+			url: "/product/get"+product_code,
 			method: 'get',
 			success: function(response){
 				// if(response.product[0].amount>=parseInt(rowEl.find('#kart-product-amount').text())+1){

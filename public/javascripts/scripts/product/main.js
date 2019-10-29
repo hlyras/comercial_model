@@ -9,7 +9,7 @@ $(function(){
 		let color = document.getElementById("product-filter-form").elements.namedItem('color').value;
 
 		$.ajax({
-			url: "http://localhost:3000/filter?name="+name+"&code="+code+"&color="+color,
+			url: "/product/filter?name="+name+"&code="+code+"&color="+color,
 			method: 'get',
 			success: (products) => {
 				if(products.unauthorized){
@@ -58,15 +58,15 @@ $(function(){
 	});
 });
 
-function displayProductFilterForm(form, location){
-	css.displayForm(form);
-	// productCategoryList(form, location);
-	productColorList(form, location);
+function displayProductFilterForm(form, table){
+	css.displayForm(form, table);
+	// productCategoryList(form, table);
+	productColorList(form, table);
 };
 
 function showProduct(id){
 	$.ajax({
-		url: 'http://localhost:3000/id/'+id,
+		url: '/product/id/'+id,
 		method: 'get',
 		success: (product) => {
 			if(product.unauthorized){

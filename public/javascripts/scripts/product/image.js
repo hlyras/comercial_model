@@ -10,7 +10,7 @@ function productAddImage(product_id){
 		let img = '<img src="'+ image_url +'" />';
 		$(img).on("load", () =>  {
 			$.ajax({
-				url: '/addimage?product_id='+product_id+'&image_url='+image_url,
+				url: '/product/addimage?product_id='+product_id+'&image_url='+image_url,
 				method: 'post',
 				success: (response) => {
 					if(response.unauthorized){
@@ -35,7 +35,7 @@ function productRemoveImage(image_id, product_id){
 	let r = confirm("Deseja realmente excluir a image?");
 	if(r){
 		$.ajax({
-			url: '/removeimage?id='+image_id,
+			url: '/product/removeimage?id='+image_id,
 			method: 'delete',
 			success: function(response){
 				if(response.unauthorized){
